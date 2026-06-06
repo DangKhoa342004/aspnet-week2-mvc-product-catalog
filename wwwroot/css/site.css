@@ -301,6 +301,13 @@ a:hover {
     margin-bottom: 18px;
 }
 
+.detail-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
 .side-card {
     background: white;
     border: 1px solid #e5e7eb;

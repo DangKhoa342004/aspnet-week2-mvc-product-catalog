@@ -193,4 +193,4 @@ C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\AspNetWeek2.Mvc.pdb
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\AspNetWeek2.Mvc.genruntimeconfig.cache
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\ref\AspNetWeek2.Mvc.dll
-C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\krzpko5kl2-{0}-2j2j4drpxf-2j2j4drpxf.gz
+C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\krzpko5kl2-{0}-url0i7k3ox-url0i7k3ox.gz
