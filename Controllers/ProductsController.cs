@@ -104,4 +104,49 @@ public class ProductsController : Controller
             LastUpdatedAt = product.LastUpdatedAt
         };
     }
+    
+    [HttpGet]
+    public IActionResult Search(string? keyword, decimal? minPrice)
+    {
+        var products = _productService.Search(keyword, minPrice)
+            .Select(ToListItemViewModel)
+            .ToList();
+
+        var viewModel = new ProductSearchViewModel
+        {
+            Keyword = keyword ?? "",
+            MinPrice = minPrice,
+            Products = products
+        };
+
+        return View(viewModel);
+    }
+
+    [HttpGet]
+    public IActionResult Create()
+    {
+        var viewModel = new ProductCreateViewModel
+        {
+            Quantity = 1,
+            MinStock = 1
+        };
+
+        return View(viewModel);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Create(ProductCreateViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        _productService.Create(model);
+
+        TempData["SuccessMessage"] = "Đã thêm sản phẩm thành công.";
+
+        return RedirectToAction(nameof(Index));
+    }
 }

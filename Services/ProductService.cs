@@ -115,4 +115,48 @@ public class ProductService
             NeedReorderCount = needReorderCount
         };
     }
+
+    public List<Product> Search(string? keyword, decimal? minPrice)
+    {
+        var query = _products.AsEnumerable();
+
+        if (!string.IsNullOrWhiteSpace(keyword))
+        {
+            query = query.Where(product =>
+                product.Name.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                product.Category.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                product.Sku.Contains(keyword, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (minPrice.HasValue)
+        {
+            query = query.Where(product => product.UnitPrice >= minPrice.Value);
+        }
+
+        return query.ToList();
+    }
+
+    public Product Create(ProductCreateViewModel model)
+    {
+        var newId = _products.Count == 0
+            ? 1
+            : _products.Max(product => product.Id) + 1;
+
+        var product = new Product
+        {
+            Id = newId,
+            Sku = $"NEW-{newId:000}",
+            Name = model.Name,
+            Category = model.Category,
+            Supplier = model.Supplier,
+            UnitPrice = model.UnitPrice,
+            Quantity = model.Quantity,
+            MinStock = model.MinStock,
+            LastUpdatedAt = DateTime.Now
+        };
+
+        _products.Add(product);
+
+        return product;
+    }
 }

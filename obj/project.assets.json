@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\API_ASPNET\\Lab02\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
       "projectName": "AspNetWeek2.Mvc",
-      "projectPath": "C:\\Users\\ASUS\\Desktop\\API_ASPNET\\Lab02\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
+      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\Desktop\\API_ASPNET\\Lab02\\AspNetWeek2.Mvc\\obj\\",
+      "outputPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03\\AspNetWeek2.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config"
