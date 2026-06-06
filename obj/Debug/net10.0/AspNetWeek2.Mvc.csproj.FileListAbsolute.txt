@@ -120,7 +120,6 @@ C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\scopedcss\bundle\AspNetWeek2.Mvc.styles.css
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\scopedcss\projectbundle\AspNetWeek2.Mvc.bundle.scp.css
-C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\krzpko5kl2-{0}-6frsplcsbg-6frsplcsbg.gz
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\il5t8x89mh-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\vluimwsgez-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\hfxoz36b6e-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -194,3 +193,4 @@ C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\AspNetWeek2.Mvc.pdb
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\AspNetWeek2.Mvc.genruntimeconfig.cache
 C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\ref\AspNetWeek2.Mvc.dll
+C:\Users\ASUS\OneDrive\Máy tính\API_ASPNET\Lab02_03\AspNetWeek2.mvc\obj\Debug\net10.0\compressed\krzpko5kl2-{0}-zj2v3g3v5l-zj2v3g3v5l.gz

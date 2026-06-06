@@ -67,7 +67,20 @@
 
             <tr>
                 <th>Trạng thái</th>
-                <td>@Model.StockStatus</td>
+                <td>
+                    @if (Model.StockStatus == "Còn hàng")
+                    {
+                        <span class="badge badge-success">@Model.StockStatus</span>
+                    }
+                    else if (Model.StockStatus == "Cần nhập thêm")
+                    {
+                        <span class="badge badge-warning">@Model.StockStatus</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-danger">@Model.StockStatus</span>
+                    }
+                </td>
             </tr>
 
             <tr>
