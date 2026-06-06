@@ -300,3 +300,26 @@ a:hover {
     border-radius: 10px;
     margin-bottom: 18px;
 }
+
+.side-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 16px;
+}
+
+.side-card.warning {
+    background: #fffbeb;
+    border-color: #fde68a;
+}
+
+.side-card.info {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.side-card.success {
+    background: #ecfdf5;
+    border-color: #bbf7d0;
+}
