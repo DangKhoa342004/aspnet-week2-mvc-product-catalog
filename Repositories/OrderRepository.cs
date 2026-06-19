@@ -2,6 +2,7 @@ using AspNetWeek2.Mvc.Data;
 using AspNetWeek2.Mvc.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AspNetWeek2.Mvc.Repositories;
 
@@ -19,6 +20,13 @@ public class OrderRepository : IOrderRepository
 				   .Include(o => o.OrderItems)
 					   .ThenInclude(oi => oi.Product)
 				   .ToListAsync();
+
+	public Task<List<Order>> GetAllReadOnlyAsync()
+        => _context.Orders
+                   .Include(o => o.OrderItems)
+                       .ThenInclude(oi => oi.Product)
+                   .AsNoTracking()
+                   .ToListAsync();
 
 	public Task<Order?> GetByIdAsync(int id)
 		=> _context.Orders

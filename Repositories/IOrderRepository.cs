@@ -6,6 +6,7 @@ namespace AspNetWeek2.Mvc.Repositories;
 public interface IOrderRepository
 {
 	Task<List<Order>> GetAllAsync();
+	Task<List<Order>> GetAllReadOnlyAsync();
 	Task<Order?> GetByIdAsync(int id);
 	Task AddAsync(Order order);
 	Task SaveChangesAsync();
