@@ -1,60 +1,15 @@
-namespace AspNetWeek2.Mvc.ViewModels;
-
-public class ProductListItemViewModel
+namespace AspNetWeek2.Mvc.ViewModels
 {
-    public int Id { get; set; }
-
-    public string Sku { get; set; } = "";
-
-    public string Name { get; set; } = "";
-
-    public string Category { get; set; } = "";
-
-    public decimal UnitPrice { get; set; }
-
-    public int Quantity { get; set; }
-
-    public int MinStock { get; set; }
-
-    public string PriceText => $"{UnitPrice:N0} VND";
-
-    public decimal InventoryValue => UnitPrice * Quantity;
-
-    public string InventoryValueText => $"{InventoryValue:N0} VND";
-
-    public string StockStatus
+    public class ProductListItemViewModel
     {
-        get
-        {
-            if (Quantity <= 0)
-            {
-                return "Hết hàng";
-            }
+        public int Id { get; set; }
 
-            if (Quantity <= MinStock)
-            {
-                return "Cần nhập thêm";
-            }
+        public string Name { get; set; } = string.Empty;
 
-            return "Còn hàng";
-        }
-    }
+        public decimal Price { get; set; }
 
-    public string StockStatusClass
-    {
-        get
-        {
-            if (Quantity <= 0)
-            {
-                return "badge badge-danger";
-            }
+        public int Stock { get; set; }
 
-            if (Quantity <= MinStock)
-            {
-                return "badge badge-warning";
-            }
-
-            return "badge badge-success";
-        }
+        public string CategoryName { get; set; } = string.Empty;
     }
 }
