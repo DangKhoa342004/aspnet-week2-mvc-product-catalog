@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AspNetWeek2.Mvc.Models;
 
 public class OrderItem
@@ -12,5 +14,6 @@ public class OrderItem
     public int Quantity { get; set; }
     public decimal UnitPrice { get; set; }
 
+    [NotMapped]
     public decimal TotalPrice => Quantity * UnitPrice;
 }
