@@ -12,6 +12,10 @@ public class OrderCreateViewModel
     [StringLength(100, ErrorMessage = "Tên sản phẩm không được vượt quá 100 ký tự")]
     public string ProductName { get; set; } = "";
 
+    [Required(ErrorMessage = "Mã sản phẩm không được để trống")]
+    [Range(1, 1000, ErrorMessage = "Mã sản phẩm phải nhỏ hơn hoặc bằng số sản phẩm hiện có")]
+    public int ProductId { get; set; } = 0;
+
     [Required(ErrorMessage = "Nhóm sản phẩm không được để trống")]
     public string Category { get; set; } = "";
 

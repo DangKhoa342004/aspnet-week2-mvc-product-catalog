@@ -10,13 +10,11 @@ public class ProductDetailViewModel
 
     public decimal UnitPrice { get; set; }
 
-    public int Quantity { get; set; }
-
-    public DateTime LastUpdatedAt { get; set; }
+    public int Stock { get; set; }
 
     public string PriceText => $"{UnitPrice:N0} VND";
 
-    public decimal InventoryValue => UnitPrice * Quantity;
+    public decimal InventoryValue => UnitPrice * Stock;
 
     public string InventoryValueText => $"{InventoryValue:N0} VND";
 
