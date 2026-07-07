@@ -10,4 +10,5 @@ public interface IOrderService
 	Task<Order?> GetByIdAsync(int id);
 	Task CreateAsync(Order order);
 	Task CreateOrderAsync(OrderCreateViewModel model);
+
 }

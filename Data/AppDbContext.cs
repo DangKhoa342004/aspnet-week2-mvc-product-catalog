@@ -66,6 +66,5 @@ public class AppDbContext : DbContext
             new Product { Id = 2, Name = "Mechanical Keyboard", Price = 1350000, Stock = 4, CategoryId = 1 },
             new Product { Id = 3, Name = "24-Inch Monitor", Price = 3200000, Stock = 3, CategoryId = 2 }
         );
-
     }
 }

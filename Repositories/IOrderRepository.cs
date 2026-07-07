@@ -1,4 +1,5 @@
 using AspNetWeek2.Mvc.Models;
+using AspNetWeek2.Mvc.ViewModels;
 using System.Collections.Generic;
 
 namespace AspNetWeek2.Mvc.Repositories;
@@ -10,4 +11,5 @@ public interface IOrderRepository
 	Task<Order?> GetByIdAsync(int id);
 	Task AddAsync(Order order);
 	Task SaveChangesAsync();
+	Task CreateOrderAsync(OrderCreateViewModel model);
 }
