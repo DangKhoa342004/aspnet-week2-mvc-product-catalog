@@ -12,8 +12,8 @@
 
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Thành công!</strong> @TempData["SuccessMessage"]
+        <div class="success-box">
+            @TempData["SuccessMessage"]
         </div>
     }
 
@@ -22,6 +22,8 @@
             <thead class="table-header-dark">
                 <tr>
                     <th>Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Product Name</th>
                     <th>Ngày tạo</th>
                     <th>Tổng tiền</th>
                 </tr>
@@ -33,6 +35,17 @@
                     {
                         <tr>
                             <td class="font-weight-bold">#@order.Id</td>
+                            <td>@order.CustomerName</td>
+                            <td>
+                                @if (order.OrderItems != null && order.OrderItems.Any())
+                                {
+                                    @string.Join(", ", order.OrderItems.Select(i => i.Product?.Name ?? "Không rõ"))
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Không có sản phẩm</span>
+                                }
+                            </td>
                             <td>@order.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
                             <td class="text-primary font-weight-bold">@order.TotalAmount.ToString("N0") VND</td>
                         </tr>
@@ -41,7 +54,7 @@
                 else
                 {
                     <tr>
-                        <td colspan="3" class="text-center text-muted py-4">Chưa có đơn hàng nào trong hệ thống.</td>
+                        <td colspan="5" class="text-center text-muted py-4">Chưa có đơn hàng nào trong hệ thống.</td>
                     </tr>
                 }
             </tbody>

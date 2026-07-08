@@ -52,7 +52,7 @@ public class AppDbContext : DbContext
                   .WithMany(o => o.OrderItems)
                   .HasForeignKey(oi => oi.OrderId);
             entity.HasOne(oi => oi.Product)
-                  .WithMany()
+                  .WithMany(p => p.OrderItems)
                   .HasForeignKey(oi => oi.ProductId);
         });
 

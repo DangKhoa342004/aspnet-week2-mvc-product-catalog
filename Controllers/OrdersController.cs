@@ -45,7 +45,10 @@ public class OrdersController : Controller
         }
         catch (Exception ex)
         {
-            ModelState.AddModelError("", "Lỗi khi tạo đơn hàng: " + ex.Message);
+            string realError = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+    
+            ModelState.AddModelError("", "Chi tiết lỗi: " + realError);
+    
             return View(model);
         }
     }

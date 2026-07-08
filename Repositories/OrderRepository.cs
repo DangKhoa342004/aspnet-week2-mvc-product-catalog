@@ -52,6 +52,7 @@ public class OrderRepository : IOrderRepository
 
         	var order = new Order
         	{
+				CustomerName = model.CustomerName,
             	CreatedAt = DateTime.Now,
             	TotalAmount = product.Price * model.Quantity
         	};
