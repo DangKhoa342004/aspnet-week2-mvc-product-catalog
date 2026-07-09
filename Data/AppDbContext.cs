@@ -14,57 +14,17 @@ public class AppDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.ToTable("Categories");
-            entity.HasKey(c => c.Id);
-            entity.Property(c => c.Name).IsRequired().HasMaxLength(100);
-        });
+        base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Product>(entity =>
-        {
-            entity.ToTable("Products");
-            entity.HasKey(p => p.Id);
-            entity.Property(p => p.Name).IsRequired().HasMaxLength(150);
-            entity.Property(p => p.Price).HasColumnType("decimal(18,2)");
-            entity.HasOne(p => p.Category)
-                  .WithMany(c => c.Products)
-                  .HasForeignKey(p => p.CategoryId);
-        });
+        modelBuilder.Entity<Product>()
+                .HasIndex(p => p.SKU)
+                .IsUnique();
 
-        modelBuilder.Entity<Order>(entity =>
-        {
-            entity.ToTable("Orders");
-            entity.HasKey(o => o.Id);
-            entity.Property(o => o.TotalAmount).HasColumnType("decimal(18,2)");
-            entity.HasMany(o => o.OrderItems)
-                  .WithOne(oi => oi.Order)
-                  .HasForeignKey(oi => oi.OrderId)
-                  .OnDelete(DeleteBehavior.Cascade);
-        });
+        modelBuilder.Entity<Product>()
+                .Property(p => p.RowVersion)
+                .IsRowVersion();
 
-        modelBuilder.Entity<OrderItem>(entity =>
-        {
-            entity.ToTable("OrderItems");
-            entity.HasKey(oi => oi.Id);
-            entity.Property(oi => oi.UnitPrice).HasColumnType("decimal(18,2)");
-            entity.HasOne(oi => oi.Order)
-                  .WithMany(o => o.OrderItems)
-                  .HasForeignKey(oi => oi.OrderId);
-            entity.HasOne(oi => oi.Product)
-                  .WithMany(p => p.OrderItems)
-                  .HasForeignKey(oi => oi.ProductId);
-        });
-
-        modelBuilder.Entity<Category>().HasData(
-            new Category { Id = 1, Name = "Accessories" },
-            new Category { Id = 2, Name = "Displays" }
-        );
-
-        modelBuilder.Entity<Product>().HasData(
-            new Product { Id = 1, Name = "Wireless Mouse", Price = 250000, Stock = 10, CategoryId = 1 },
-            new Product { Id = 2, Name = "Mechanical Keyboard", Price = 1350000, Stock = 4, CategoryId = 1 },
-            new Product { Id = 3, Name = "24-Inch Monitor", Price = 3200000, Stock = 3, CategoryId = 2 }
-        );
+        modelBuilder.Entity<Product>()
+                .HasQueryFilter(p => !p.IsDeleted);
     }
 }
