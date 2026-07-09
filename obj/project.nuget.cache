@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a1DNjyA74CE=",
+  "dgSpecHash": "a+xGo2UyoUc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\aspnetweek2.mvc\\AspNetWeek2.Mvc.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -73,9 +73,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
-      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\aspnetweek2.mvc\\AspNetWeek2.Mvc.csproj",
+      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\aspnetweek2.mvc\\AspNetWeek2.Mvc.csproj",
+      "filePath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\API_ASPNET\\Lab02_03_04\\AspNetWeek2.Mvc\\AspNetWeek2.Mvc.csproj",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"
