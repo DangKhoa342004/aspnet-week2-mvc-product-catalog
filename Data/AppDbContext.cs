@@ -12,16 +12,12 @@ public class AppDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        
+        modelBuilder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(100);
+        modelBuilder.Entity<Product>().HasIndex(p => p.SKU).IsUnique().IsRequired().HasMaxLength(50);
+        modelBuilder.Entity<Product>().Property(p => p.Price).IsRequired().HasColumnType("decimal(18,2)");
 
-        modelBuilder.Entity<Product>()
-                .HasIndex(p => p.SKU)
-                .IsUnique();
-
-        modelBuilder.Entity<Product>()
-                .Property(p => p.RowVersion)
-                .IsRowVersion();
-
-        modelBuilder.Entity<Product>()
-                .HasQueryFilter(p => !p.IsDeleted);
+        modelBuilder.Entity<Product>().Property(p => p.RowVersion).IsRowVersion();
+        modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);
     }
 }

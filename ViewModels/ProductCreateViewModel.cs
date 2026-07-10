@@ -10,7 +10,7 @@ public class ProductCreateViewModel
     [RegularExpression(@"^[A-Z0-9\-]+$", ErrorMessage = "SKU chỉ gồm chữ in hoa, số và dấu -.")]
     public string SKU { get; set; } = string.Empty;
 
-    [Range(1000, 100000000, ErrorMessage = "Giá phải từ 1.000 đến 100.000.000.")]
+    [Range(1000, 100000000, ErrorMessage = "Giá phải từ 1.000 trở lên.")]
     public decimal Price { get; set; }
 
     [Range(0, 100000, ErrorMessage = "Tồn kho phải từ 0 đến 100.000.")]

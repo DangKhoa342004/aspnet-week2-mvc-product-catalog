@@ -1,0 +1,91 @@
+@model ProductCreateViewModel
+
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<div class="page-header">
+    <h2 class="page-title">Edit Product</h2>
+
+    <a class="btn btn-light"
+       asp-controller="Products"
+       asp-action="Index">
+        Quay lại danh sách
+    </a>
+</div>
+
+<div class="form-layout">
+    <form class="form-box"
+          asp-controller="Products"
+          asp-action="Edit"
+          method="post">
+
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="All"></div>
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="RowVersion" />
+
+        <div class="form-group">
+            <label asp-for="Name">Tên sản phẩm</label>
+            <input asp-for="Name"
+                   class="form-control"
+                   placeholder="Ví dụ: Gaming Mouse" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="SKU">Mã SKU</label>
+            <input asp-for="SKU"
+                   class="form-control"
+                   placeholder="Ví dụ: GM-001" />
+            <span asp-validation-for="SKU" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price">Giá bán</label>
+            <input asp-for="Price"
+                   class="form-control"
+                   placeholder="Ví dụ: 450000" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UnitPrice">Giá bán</label>
+            <input asp-for="UnitPrice"
+                   class="form-control"
+                   placeholder="Ví dụ: 450000" />
+            <span asp-validation-for="UnitPrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="StockQuantity">Số lượng</label>
+            <input asp-for="StockQuantity"
+                   class="form-control"
+                   placeholder="Ví dụ: 12" />
+            <span asp-validation-for="StockQuantity" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Mô tả</label>
+            <input asp-for="Description"
+                   class="form-control"
+                   placeholder="Ví dụ: Chuột gaming cao cấp" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <button class="btn" type="submit">
+            Save Changes
+        </button>
+
+        <a class="btn btn-secondary"
+           asp-controller="Products"
+           asp-action="Index">
+            Back to List
+        </a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

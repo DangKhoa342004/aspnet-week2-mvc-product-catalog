@@ -1,0 +1,62 @@
+@model IEnumerable<BookstoreCatalog.Mvc.ViewModels.ProductTrashItemViewModel>
+
+@{
+    ViewData["Title"] = "Trash - Deleted Products";
+}
+
+<div class="page-header">
+    <h2 class="page-title">Trash - Deleted Products</h2>
+
+    <a class="btn btn-light"
+       asp-controller="Products"
+       asp-action="Index">
+        Quay lại danh sách
+    </a>
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Deleted At</th>
+            <th>Deleted By</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="4" class="text-center">Thùng rác rỗng</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@(item.DeletedAt?.ToString("dd/MM/yyyy HH:mm") ?? "N/A")</td>
+                    <td>
+                        <form asp-action="Restore" asp-route-id="@item.Id" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Bạn có chắc chắn muốn khôi phục sản phẩm này?');">
+                                Restore
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="alert alert-warning mt-4">
+    <strong>Soft Delete Rule:</strong> Chức năng Delete chỉ set trạng thái <code>IsDeleted=true</code> và <code>DeletedAt=DateTime.Now</code>. Không xóa dữ liệu vật lý khỏi database.
+</div>
